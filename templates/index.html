@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    
+    <title>Steganography</title>
+    
+    <style>
+img {
+    border: 5px solid #ddd;
+    border-radius: 10px;
+    padding: 5px;
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    
+}
+</style>
+    
+</head>
+<body>
+
+    <img src="{{url_for('static', filename='1.jpeg')}}" alt="Zayed University " width="200" height="200">
+    
+  <div class="mytabs">
+    <input type="radio" id="tabHome" name="mytabs" checked="checked">
+    <label for="tabHome">Home</label>
+    <div class="tab">
+        <h2>Home</h2>
+      <p>This is our senior project</p>
+        <p>We have created a website based on steganography that allows you to hide your text in the image you upload and download the new modified image and the second option is to show the hidden text from any modified image we hope you enjoy it .</p>
+    </div>
+ 
+        <input type="radio" id="tabAbout" name="mytabs">
+    <label for="tabAbout">About </label>
+    <div class="tab">
+      <h2>About</h2>
+      <p>What is steganography?</p>
+        <p>
+        Steganography is the act of hiding an encrypted secret data in an image for example which would need a decryption to get the secret data out. Steganography can hide many data including text, image, video, or audio content; the data to be hidden can be hidden inside almost any other type of digital content (Semilof & Clark, 2021).
+    </p>
+     <p> Students Names: Amna AlDarmaki, Aysha Abdulla, Shama Saeed </p>   
+        
+    </div>
+      
+      
+    <input type="radio" id="tabEncode" name="mytabs">
+    <label for="tabEncode">Steganography</label>
+    <div class="tab">
+
+        <div style="text-align: center;"> <h2> The process of hiding text in image </h2> </div>
+        <p>the process starts when you choose and image and save it then typing the text you wanted to hide the press hide button then a new modified picture will be available for you to download   </p>
+
+
+        <h3>Upload your image </h3>
+
+
+             <form action="/" method="post" enctype='multipart/form-data'>
+                 <input type="file" name="filefirst" id="filefirst">
+                 <br><br>
+                 <h3>Type your text</h3>
+                 <label for="inputtohide"></label>
+                 <input type="text" id="inputtohide" name="inputtohide"><br><br>
+                 <input type="submit" value="hide">
+             </form>
+
+
+
+            <form action="/revealtext" method="post" enctype='multipart/form-data'>
+                <div style="text-align: center;"><h2>the process of reveal text from image </h2></div>
+                <p>To reveal the text from the image.</p>
+                <h3>upload your image </h3>
+
+                <input type="file" name="filesecond" id="filesecond">
+                <input type="submit" value="save image">
+            </form>
+        <br><br>
+        <p>{{fetch_data}}</p>
+
+    </div>
+
+  </div>
+</body>
+</html>
+
+

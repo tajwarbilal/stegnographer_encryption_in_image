@@ -1,0 +1,51 @@
+body {
+    background: #ccc;
+    font-family: 'Roboto', sans-serif;
+}
+.mytabs {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 600px;
+    margin: 15px auto;
+    padding: 10px;
+}
+.mytabs input[type="radio"] {
+    display: none;
+}
+.mytabs label {
+    padding: 20px;
+    background: #8fbc8f;
+    font-weight: bold;
+
+}
+
+.mytabs .tab {
+    width: 100%;
+    padding: 120px;
+    background: #c4e6f1;
+    order: 1;
+    display: none;
+   
+}
+.mytabs .tab h2 {
+
+
+}
+
+.mytabs .tab h2 {
+    font-size: 15;
+
+}
+
+.mytabs input[type='radio']:checked + label + .tab {
+    display: block;
+}
+
+.mytabs input[type="radio"]:checked + label {
+    background: #fff;
+}
+
+
+body {
+  background-color: lightblue;
+}
